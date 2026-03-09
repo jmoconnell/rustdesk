@@ -97,6 +97,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Restore bridge files
         uses: actions/download-artifact@master
@@ -324,6 +326,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Install LLVM and Clang
         uses: rustdesk-org/install-llvm-action-32bit@master
@@ -480,6 +484,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -611,6 +617,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Import the codesign cert
         if: env.MACOS_P12_BASE64 != null
@@ -930,6 +938,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -1208,6 +1218,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -1379,6 +1391,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Set Swap Space
         if: ${{ matrix.job.arch == 'x86_64' }}
@@ -1715,6 +1729,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Modify vcpkg.json for armv7
         if: matrix.job.vcpkg-triplet == 'arm-linux'
@@ -1923,6 +1939,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Download Binary
         uses: actions/download-artifact@master
@@ -2002,6 +2020,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Download Binary
         uses: actions/download-artifact@master
@@ -2069,6 +2089,8 @@ jobs:
         run: |
           perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
           perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
+          # Inject OVERWRITE_SETTINGS into global_init() so the server appears configured in the UI
+          perl -pi -e 's|pub fn global_init\(\) -> bool \{|pub fn global_init() -> bool {\n    // Cirrata: force server config via OVERWRITE_SETTINGS (highest priority)\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "custom-rendezvous-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "relay-server".to_string(),\n        "remote.cirrata.com".to_string(),\n    );\n    hbb_common::config::OVERWRITE_SETTINGS.write().unwrap().insert(\n        "key".to_string(),\n        "Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=".to_string(),\n    );|' src/common.rs
 
       - name: Prepare env
         run: |
