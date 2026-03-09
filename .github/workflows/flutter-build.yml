@@ -95,8 +95,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Restore bridge files
         uses: actions/download-artifact@master
@@ -322,8 +322,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Install LLVM and Clang
         uses: rustdesk-org/install-llvm-action-32bit@master
@@ -478,8 +478,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -609,8 +609,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Import the codesign cert
         if: env.MACOS_P12_BASE64 != null
@@ -928,8 +928,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -1206,8 +1206,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Install flutter
         uses: subosito/flutter-action@v2
@@ -1377,8 +1377,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Set Swap Space
         if: ${{ matrix.job.arch == 'x86_64' }}
@@ -1713,8 +1713,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Modify vcpkg.json for armv7
         if: matrix.job.vcpkg-triplet == 'arm-linux'
@@ -1921,8 +1921,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Download Binary
         uses: actions/download-artifact@master
@@ -2000,8 +2000,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Download Binary
         uses: actions/download-artifact@master
@@ -2067,8 +2067,8 @@ jobs:
       - name: Inject Cirrata server config
         shell: bash
         run: |
-          sed -i 's|rs-ny.rustdesk.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
-          sed -i "s|OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g" libs/hbb_common/src/config.rs
+          perl -pi -e 's|rs-ny\.rustdesk\.com|remote.cirrata.com|g' libs/hbb_common/src/config.rs
+          perl -pi -e 's|OeVuKk5nlHiXp\+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=|Vl3YE4dHzUy0S8kjiY4LkzgIEv+9LBpHBA8zJ4zXBr0=|g' libs/hbb_common/src/config.rs
 
       - name: Prepare env
         run: |
