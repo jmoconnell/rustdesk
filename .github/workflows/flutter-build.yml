@@ -753,6 +753,12 @@ jobs:
           fi
           ./build.py --flutter --hwcodec --unix-file-copy-paste ${{ matrix.job.extra-build-args }}
 
+      - name: Re-sign app bundle (fix sealed resources)
+        if: env.UPLOAD_ARTIFACT == 'true'
+        run: |
+          codesign --force --deep --sign - ./flutter/build/macos/Build/Products/Release/RustDesk.app
+          codesign --verify --verbose ./flutter/build/macos/Build/Products/Release/RustDesk.app
+
       - name: create unsigned dmg
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
